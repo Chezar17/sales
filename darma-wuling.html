@@ -3,7 +3,7 @@
 <head>
 <meta name="referrer" content="no-referrer">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Darma Wuling · Sales Consultant Wuling Prima Daan Mogot</title>
 <meta name="description" content="Darma, Sales Consultant resmi Wuling Prima Daan Mogot. Promo DP & cicilan pasti untuk Darion EV, Eksion EV, BinguoEV, Cloud EV, Air ev, Cortez, Alvez, Almaz Hybrid, Mitra EV & Formo.">
 <meta property="og:title" content="Darma · Sales Consultant Wuling Prima Daan Mogot">
@@ -62,7 +62,10 @@ section{padding:96px 0;position:relative}
 #intro .mk{width:110px;fill:transparent;stroke:var(--red);stroke-width:.6;stroke-dasharray:160;stroke-dashoffset:160;animation:draw 1.1s var(--ease) forwards,fillin .5s .9s forwards}
 #intro .wm{width:170px;fill:#fff;opacity:0;animation:up .7s .9s var(--ease) forwards}
 #intro .bar{width:170px;height:2px;background:var(--line);overflow:hidden;border-radius:2px}
-#intro .bar i{display:block;height:100%;width:0;background:var(--red);animation:load 1.4s var(--ease) forwards}
+#intro .bar i{display:block;height:100%;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .25s linear}
+#intro .pct{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:-6px}
+#intro{animation:introKill .01s 15s forwards}
+@keyframes introKill{to{opacity:0;visibility:hidden;pointer-events:none}}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fillin{to{fill:var(--red);stroke-width:0}}
 @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -498,6 +501,114 @@ h2 .wd{display:inline-block;opacity:0;transform:translateY(60%) rotate(4deg);tra
   .sinfo .pr{text-align:left}
   .sctrl .btn{display:none}
 }
+
+/* ===== MOBILE FRIENDLY ===== */
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{overflow-x:clip}
+a,button,.btn,select,summary{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+#intro{min-height:100vh;min-height:100dvh}
+.grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr))}
+.marq{max-width:100vw}
+@media (max-width:1020px){
+  .nav-in{height:64px}
+  #mnav .sheet{overflow-y:auto;padding:20px 20px calc(24px + env(safe-area-inset-bottom));padding-top:max(20px,env(safe-area-inset-top))}
+  #mnav .sheet a{min-height:48px;display:flex;align-items:center}
+  .wa-fab{right:max(16px,env(safe-area-inset-right))}
+  #mbar{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom))}
+  .wa-fab{bottom:calc(86px + env(safe-area-inset-bottom))}
+  footer{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+  .stage{touch-action:pan-y}
+  .reveal{filter:none;transform:translateY(24px)}
+  .reveal.in{transform:none}
+  .halo{filter:none}
+  #nav,#nav.scrolled{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(7,9,13,.94)}
+  .btn-ghost,.cd-box,.mbox,.modal{backdrop-filter:none;-webkit-backdrop-filter:none}
+  .about .ph{max-width:460px;margin-inline:auto;width:100%}
+  .dph{min-height:340px}
+  .loc iframe{min-height:300px}
+}
+@media (max-width:640px){
+  select,input[type=text],input[type=tel],input[type=date],textarea{font-size:16px;padding:14px}
+  .btn{padding:14px 20px;min-height:48px}
+  .hero-ctas{flex-direction:column;margin:22px 0 18px}
+  .hero-ctas .btn{width:100%}
+  .hero h1{font-size:clamp(32px,10vw,46px)}
+  .hero p.lead,.lead{font-size:16px}
+  h2{font-size:clamp(25px,7.4vw,34px)}
+  .cd-box{width:100%;justify-content:space-between;padding:12px 14px;gap:10px}
+  .cd{width:100%;justify-content:space-between}
+  .cd div{flex:1;min-width:0}
+  .cd b{font-size:20px}
+  .stats{gap:10px;margin-top:28px}
+  .stat{padding:16px}
+  .stat b{font-size:24px}
+  .stat>span:last-child{font-size:13px}
+  .marq{margin-top:40px;padding:12px 0}
+  .mq span{font-size:14px;gap:28px}.mq{gap:28px}
+  .bignm{font-size:clamp(38px,15vw,70px)}
+  .sinfo{margin-top:0}
+  .sinfo .pr{width:100%}
+  .sctrl{margin-top:14px}
+  .arr{width:46px;height:46px}
+  .bcard{min-height:0;padding:20px;border-radius:24px}
+  .bcard .car{width:92%}
+  .filters{flex-wrap:nowrap;overflow-x:auto;margin:22px -16px 20px;padding:2px 16px 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-snap-type:x proximity}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:none;white-space:nowrap;min-height:44px;scroll-snap-align:start}
+  .grid{gap:14px}
+  .mcard{padding:14px;border-radius:20px}
+  .mcard .acts .btn{min-height:46px;padding:12px 8px}
+  .pay b{font-size:15px}
+  .promo{padding:30px 18px}
+  .promo-grid{gap:26px}
+  .plist li{padding:12px 14px;font-size:14.5px}
+  .plist li:hover{transform:none}
+  .lowest b{font-size:18px}
+  .panel{padding:20px;border-radius:22px}
+  .seg button{min-height:44px}
+  input[type=range]{height:28px}
+  .res{padding:22px;border-radius:22px}
+  .res .rows div{font-size:14px}
+  .quiz{padding:20px;border-radius:24px}
+  .qopts{gap:10px}
+  .qopts button{padding:16px 12px;min-height:48px}
+  .qh{font-size:18px}
+  .qres{gap:12px}
+  .about{gap:28px}
+  .step{padding:20px}
+  .step:hover,.pt:hover,.qopts button:hover{transform:none}
+  .dph{min-height:300px}
+  .dinfo{padding:22px}
+  .vcard{padding:12px}
+  .qa button{padding:16px 16px;font-size:15px;min-height:52px}
+  .qa .a p{padding:0 16px 16px;font-size:14.5px}
+  .radios label span{padding:12px 14px;min-height:44px;display:inline-flex;align-items:center}
+  .loc{border-radius:22px}
+  .loc .info{padding:22px}
+  .loc iframe{min-height:260px}
+  .final .bgmk{width:240px;height:130px}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+  .mbox{padding:24px 20px;border-radius:24px;max-height:calc(100dvh - 32px);overflow-y:auto}
+  .modal{padding:12px;align-items:end}
+  .lb img{max-height:80dvh}
+  .toast{top:max(14px,env(safe-area-inset-top))}
+  .bubble{max-width:min(260px,calc(100vw - 100px))}
+  .fab-btn{width:56px;height:56px}
+}
+@media (max-width:380px){
+  .wrap{width:calc(100% - 24px)}
+  .brand .logo{width:84px;height:15px}
+  .hero h1{font-size:30px}
+  .stats{grid-template-columns:1fr 1fr}
+  .topbar{font-size:12px;padding:8px 12px}
+  .cd small{font-size:9px}
+  .pay{padding:10px 12px;gap:8px}
+  .pay b{font-size:14px}
+  .btn{font-size:14px}
+}
+@media (hover:none){
+  .mcard:hover .img img,.bcard:hover .car,.fcard:hover img,.dph:hover img{transform:none}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.hfade,h2 .wd{opacity:1;transform:none;filter:none}.hero h1 .ln>span{transform:none}#intro{display:none}}
 </style>
 <script>
@@ -513,7 +624,8 @@ document.addEventListener('error',function(e){var i=e.target;if(i.tagName==='IMG
 <div id="intro" aria-hidden="true"><div class="lg">
   <svg class="mk" viewBox="-1 5 75 41"><path d="M43.9035 31.449L36.9835 19.0312C36.8018 18.7067 36.3345 18.7067 36.1544 19.0312L29.2344 31.449C29.1536 31.5918 29.1536 31.7673 29.2344 31.9117L36.1544 44.3404C36.3345 44.6649 36.8018 44.6649 36.9835 44.3404L43.9035 31.9117C43.9827 31.7673 43.9827 31.5934 43.9035 31.449Z"/><path d="M28.86 31.095L16.585 9.14253C15.5882 7.35857 13.7002 6.25 11.6554 6.25H0.364772C0.0868531 6.25 -0.0885928 6.54966 0.046485 6.79186L6.38894 18.1927C6.46967 18.3371 6.62183 18.4272 6.78641 18.4272H18.7804C18.9527 18.4272 19.1158 18.5141 19.2089 18.6601L19.5489 19.2439C19.611 19.3401 19.5427 19.4674 19.4263 19.4674H7.3438C7.23356 19.4674 7.16214 19.587 7.21648 19.6833L12.5497 29.2676C13.3695 30.7348 14.9175 31.6446 16.599 31.6446H28.5371C28.8196 31.6446 28.9966 31.3419 28.86 31.095Z"/><path d="M44.2776 31.095L56.5511 9.14253C57.5478 7.35857 59.4358 6.25 61.4806 6.25H72.7728C73.0507 6.25 73.2262 6.54966 73.0911 6.79186L66.7487 18.1927C66.6679 18.3371 66.5158 18.4272 66.3512 18.4272H54.3572C54.1833 18.4272 54.0218 18.5141 53.9287 18.6601L53.5887 19.2439C53.5266 19.3401 53.5949 19.4674 53.7098 19.4674H65.7954C65.9071 19.4674 65.977 19.587 65.9227 19.6833L60.5894 29.2676C59.7696 30.7348 58.2217 31.6446 56.5402 31.6446H44.6021C44.3195 31.6446 44.141 31.3419 44.2792 31.095H44.2776Z"/></svg>
   <svg class="wm" viewBox="78 15 169 21"><path fill-rule="evenodd" d="M101.87 16.5407C101.87 16.5407 101.87 26.243 101.869 29.0175C101.869 29.3001 101.535 29.4461 101.325 29.2582L92.9567 21.6643H92.9552L84.5865 29.2582C84.3769 29.4476 84.0431 29.3001 84.0431 29.0175C84.0431 26.243 84.0416 16.5407 84.0416 16.5407H78.8496V34.4641H87.3145L92.9552 29.3451H92.9598L98.6005 34.4641H107.064V16.5407H101.872H101.87Z"/><path fill-rule="evenodd" d="M135.274 16.5408V28.8639C135.274 29.089 135.091 29.2707 134.866 29.2707H118.258C118.033 29.2707 117.851 29.0875 117.851 28.8639V16.5408H112.662V30.6416L116.478 34.4549H136.647L140.463 30.6401V16.5392H135.276L135.274 16.5408Z"/><path fill-rule="evenodd" d="M151.248 28.8639V16.5408H146.062V30.6416L149.876 34.4549H168.669V29.2707H151.655C151.43 29.2707 151.248 29.0875 151.248 28.8623"/><path fill-rule="evenodd" d="M174.265 34.4642V16.5345H179.458V34.4642H174.265Z"/><path fill-rule="evenodd" d="M207.661 16.5345V27.6699C207.661 27.8966 207.411 28.0317 207.223 27.9044L190.245 16.533H185.058V34.4626H190.245V23.3257C190.245 23.1006 190.496 22.9655 190.683 23.0912L207.661 34.4626H212.846V16.533H207.661V16.5345Z"/><path fill-rule="evenodd" d="M237.486 25.4978V27.3858L240.834 28.6046C241.197 28.7366 241.103 29.2738 240.716 29.2738H224.042C223.819 29.2738 223.636 29.0921 223.636 28.867V21.3523C223.636 21.1272 223.819 20.944 224.042 20.944H246.249V16.533H222.263L218.448 20.3493V30.6447L222.263 34.4611H246.249V25.4978H237.486Z"/></svg>
-  <div class="bar"><i></i></div>
+  <div class="bar"><i id="introBar"></i></div>
+  <div class="pct" id="introPct">0%</div>
 </div></div>
 <div class="cglow" id="cglow"></div>
 <div id="prog"></div>
@@ -1141,11 +1253,48 @@ if(FINE&&!RM){
   (function draw(){if(vis){ctx.clearRect(0,0,W,H);P.forEach(p=>{p.y-=p.s;p.x+=Math.sin(p.y*20)*.0003;if(p.y<-.02){p.y=1.02;p.x=Math.random()}ctx.beginPath();ctx.arc(p.x*W,p.y*H,p.r,0,7);ctx.fillStyle=p.red?`rgba(255,60,90,${p.a})`:`rgba(220,226,235,${p.a*.7})`;ctx.fill()})}requestAnimationFrame(draw)})();
 })();
 
-/* intro */
+/* intro / loader: tunggu semua benar-benar siap, baru buka main page */
 function start(){document.body.classList.add('ready');document.body.classList.remove('lock');go(0)}
-if(RM){$('#intro').remove();start()}
-else{let seen=false;try{seen=sessionStorage.getItem('dw_intro')==='1';sessionStorage.setItem('dw_intro','1')}catch(e){}
-  const dur=seen?400:1700;setTimeout(()=>{$('#intro').classList.add('done');setTimeout(start,350);setTimeout(()=>$('#intro').remove(),1100)},dur)}
+(function(){
+  const intro=$('#intro');
+  if(RM){intro.remove();start();return}
+  const bar=$('#introBar'),pct=$('#introPct');
+  const MIN=1900, MAX=12000, t0=performance.now();
+  const imgs=$$('img').filter(i=>i.loading!=='lazy'&&i.getAttribute('src'));
+  let total=imgs.length+2, loaded=0, fonts=false, win=document.readyState==='complete';
+  const mark=()=>{loaded++};
+  imgs.forEach(i=>{
+    if(i.complete&&i.naturalWidth>0){loaded++;return}
+    let d=false;const once=()=>{if(!d){d=true;mark()}};
+    i.addEventListener('load',once,{once:true});
+    i.addEventListener('error',()=>setTimeout(once,300),{once:true});
+  });
+  const fontDone=()=>{fonts=true};
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fontDone,fontDone);
+  if(!win)addEventListener('load',()=>{win=true},{once:true});
+  let p=0,finished=false;
+  function realProgress(){return Math.min(1,(loaded+(fonts?1:0)+(win?1:0))/total)}
+  function finish(){
+    if(finished)return;finished=true;
+    bar.style.transform='scaleX(1)';pct.textContent='100%';
+    setTimeout(()=>{
+      intro.classList.add('done');
+      setTimeout(start,350);
+      setTimeout(()=>intro.remove(),1200);
+    },350);
+  }
+  (function tick(){
+    if(finished)return;
+    const el=performance.now()-t0;
+    const target=Math.min(realProgress(),el/MIN); // tidak boleh lebih cepat dari animasi minimum
+    p+=(target-p)*.15;
+    const shown=Math.min(.99,p);
+    bar.style.transform='scaleX('+shown+')';pct.textContent=Math.round(shown*100)+'%';
+    const ready=(win&&fonts&&loaded>=imgs.length)||el>=MAX;
+    if(ready&&el>=MIN&&p>.97){finish();return}
+    requestAnimationFrame(tick);
+  })();
+})();
 </script>
 </body>
 </html>
